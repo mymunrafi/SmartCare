@@ -52,3 +52,7 @@ University of the People
 MSIT 5910 Capstone
 
 Project: SmartCare — An Intelligent Caregiver Scheduling and Compliance Management System
+
+## Development Status
+
+Initial project repository and development environment established.
