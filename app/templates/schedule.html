@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartCare - Scheduling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 25px 40px;
+        }
+
+        .container {
+            padding: 30px 40px;
+        }
+
+        .back {
+            color: #1f4e79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        th {
+            background: #1f4e79;
+            color: white;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .scheduled {
+            color: green;
+            font-weight: bold;
+        }
+
+        .info {
+            background: #e8f1f8;
+            padding: 18px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>SmartCare</h1>
+        <p>Scheduling & Shift Management</p>
+    </div>
+
+    <div class="container">
+
+        <a class="back" href="/">← Back to Dashboard</a>
+
+        <h2>Caregiver Schedule</h2>
+
+        <table>
+
+            <tr>
+                <th>Caregiver</th>
+                <th>Client</th>
+                <th>Day</th>
+                <th>Shift Time</th>
+                <th>Status</th>
+            </tr>
+
+            {% for shift in shifts %}
+
+            <tr>
+                <td>{{ shift.caregiver }}</td>
+                <td>{{ shift.client }}</td>
+                <td>{{ shift.date }}</td>
+                <td>{{ shift.time }}</td>
+                <td class="scheduled">{{ shift.status }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <div class="info">
+            <strong>Scheduling Support:</strong>
+            SmartCare organizes caregiver shifts and provides a centralized
+            view of scheduled assignments to help the scheduler identify
+            potential scheduling issues.
+        </div>
+
+    </div>
+
+</body>
+</html>

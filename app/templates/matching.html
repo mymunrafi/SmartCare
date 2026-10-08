@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartCare - Smart Matching</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 25px 40px;
+        }
+
+        .container {
+            padding: 30px 40px;
+        }
+
+        .back {
+            color: #1f4e79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .requirement {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .result {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .score {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1f4e79;
+        }
+
+        .reason {
+            display: inline-block;
+            background: #e8f1f8;
+            padding: 6px 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .note {
+            margin-top: 25px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>SmartCare</h1>
+        <p>Intelligent Caregiver Matching</p>
+    </div>
+
+    <div class="container">
+
+        <a class="back" href="/">← Back to Dashboard</a>
+
+        <h2>Caregiver Recommendations</h2>
+
+        <div class="requirement">
+            <h3>Client Requirements</h3>
+            <p><strong>Required Skill:</strong> {{ required_skill }}</p>
+            <p><strong>Location:</strong> {{ required_location }}</p>
+        </div>
+
+        {% for caregiver in results %}
+
+        <div class="result">
+
+            <h3>{{ caregiver.name }}</h3>
+
+            <div class="score">
+                Suitability Score: {{ caregiver.score }}%
+            </div>
+
+            <p><strong>Matching Factors:</strong></p>
+
+            {% for reason in caregiver.reasons %}
+                <span class="reason">{{ reason }}</span>
+            {% endfor %}
+
+        </div>
+
+        {% endfor %}
+
+        <div class="note">
+            <strong>Important:</strong>
+            SmartCare provides recommendations using transparent rules.
+            The authorized scheduler retains final assignment authority.
+        </div>
+
+    </div>
+
+</body>
+</html>

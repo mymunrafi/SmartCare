@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartCare - Caregivers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 25px 40px;
+        }
+
+        .container {
+            padding: 30px 40px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1f4e79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        th {
+            background: #1f4e79;
+            color: white;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .compliant {
+            color: green;
+            font-weight: bold;
+        }
+
+        .review {
+            color: #c47a00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>SmartCare</h1>
+        <p>Caregiver Management</p>
+    </div>
+
+    <div class="container">
+
+        <a class="back" href="/">← Back to Dashboard</a>
+
+        <h2>Caregiver Profiles</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Skills</th>
+                <th>Availability</th>
+                <th>Location</th>
+                <th>Compliance</th>
+            </tr>
+
+            <tr>
+                <td>Maria Johnson</td>
+                <td>Personal Care, Dementia</td>
+                <td>Mon-Fri</td>
+                <td>Philadelphia</td>
+                <td class="compliant">Compliant</td>
+            </tr>
+
+            <tr>
+                <td>James Williams</td>
+                <td>Companion Care, Personal Care</td>
+                <td>Mon-Sat</td>
+                <td>Upper Darby</td>
+                <td class="compliant">Compliant</td>
+            </tr>
+
+            <tr>
+                <td>Angela Brown</td>
+                <td>Dementia, Respite Care</td>
+                <td>Tue-Sun</td>
+                <td>Philadelphia</td>
+                <td class="review">Needs Review</td>
+            </tr>
+
+            <tr>
+                <td>David Smith</td>
+                <td>Personal Care, Mobility Support</td>
+                <td>Mon-Fri</td>
+                <td>Philadelphia</td>
+                <td class="compliant">Compliant</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
